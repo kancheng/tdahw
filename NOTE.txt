@@ -1,0 +1,26 @@
+﻿# Q1: What are the most pickups and drop offs region?
+# hint: use one of cluster algorithms and count number data points of each cluster.
+# Q2: What is the best time to take taxi?  
+# hint: count number of pickups in different hour.
+# Q3 : 什麼天氣會影響到顧客搭計程車
+# Q4 : 長距離搭乘是否會影響到小費的多寡 ....
+
+# 廠編號 VendorID 
+# 上車時間 tpep_pickup_datetime 
+# 下車時間 tpep_dropoff_datetime 
+# 乘客數 passenger_count 
+# 旅行距離 trip_distance 
+# 上車經度 pickup_longitude 
+# 上車緯度 pickup_latitude 
+# 收費標準 RatecodeID
+# store_and_fwd_flag 
+# 下車經度 dropoff_longitude
+# 下車緯度 dropoff_latitude
+# 付費種類 payment_type
+# 費用-票價 fare_amount
+# 費用-額外的收費 extra
+# 費用-紐約(NYC)大都會運輸署(MTA)的稅金費用mta_tax
+# 小費總額 tip_amount
+# 費用 州稅金 tolls_amount
+# 時段的費率 improvement_surcharge
+# 全總額 total_amount
