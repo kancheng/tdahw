@@ -3,7 +3,11 @@ library(leaflet)
 dt = read.csv( "yellow_tripdata_2015-08.csv"
 , stringsAsFactors = FALSE)
 
+wh8 = read.csv( "weahis8m.csv"
+, stringsAsFactors = FALSE)
+
 head(dt)
+head(wh8)
 
 # dim(dt[(dt$dropoff_longitude != 0 )&(dt$dropoff_latitude != 0 )&(dt$pickup_longitude != 0 )&(dt$pickup_latitude != 0 ), ])
 dt = dt[(dt$dropoff_longitude != 0 )&(dt$dropoff_latitude != 0 )&(dt$pickup_longitude != 0 )&(dt$pickup_latitude != 0 ), ]
