@@ -3,7 +3,7 @@
 # Q2: What is the best time to take taxi?  
 # hint: count number of pickups in different hour.
 # Q3 : 什麼天氣會影響到顧客搭計程車
-# Q4 : 長距離搭乘是否會影響到小費的多寡 ....
+# Q4 : 長距離搭乘是否會影響到小費的多寡 
 
 # 廠編號 VendorID 
 # 上車時間 tpep_pickup_datetime 
@@ -24,3 +24,18 @@
 # 費用 州稅金 tolls_amount
 # 時段的費率 improvement_surcharge
 # 全總額 total_amount
+
+# 氣溫 (° C)
+# Temperature (° C)
+# 露點 (° C)
+# Dew Point (° C)
+# 濕度 (%)
+# Humidity (%) 
+# 海平面(百帕)
+# Sea Level Press. (Km) 
+# 能見度(千米)
+# Visibility (km) 
+# Wind (公里/小時)
+# Wind (km / h) 
+# Precip. (毫米)
+# Precip. (Mm)
