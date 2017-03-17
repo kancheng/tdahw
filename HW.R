@@ -107,8 +107,21 @@ ggpic = data.frame(count = meanvtor, hour = colnames(sumdf))
 ggpic = cbind( ggpic, nm = 1:NROW(ggpic))
 plot(ggpic$nm,ggpic$count, type = "b")
 
+
 # Q3: Whether weather affects customers to take taxi or not?
 # Q3 : 什麼天氣會影響到顧客搭計程車
+
+temsumwd = vector(mode = "numeric", length = 0)
+colchartd = colnames(tmsumdf)
+for( q in 1:NCOL(tmsumdf)){
+	prochar = paste0( "sum(tmsumdf[ ", q  ," ])" )
+	prochareval = eval(parse(text = prochar))
+	temsumwd = c( temsumwd, prochareval)
+}
+ggpic2 = data.frame( day = as.numeric(colchartd), pc = temsumwd)
+plot(ggpic2$day,ggpic2$pc, type = "b")
+
+
 
 
 # Q4: Does long distance trip imply more tip?
