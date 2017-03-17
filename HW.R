@@ -148,11 +148,46 @@ total_amount = newdt$ total_amount,
 fare_amount = newdt$fare_amount)
 ndtq4t1mat = cor( newdtq4t1, use = "everything", method = "pearson")
 
-newdtq4t2= data.frame( hour = temHour, fare_amount = newdt$fare_amount)
+newdtq4t2= data.frame( hour = as.numeric(temHour), fare_amount = newdt$fare_amount)
 head(as.factor(temHour))
-q4t2temindex = unique(temHour)
+q4t2temindex = sort(unique(as.numeric(temHour)))
 
-## Test
+head(mean(newdtq4t2[newdtq4t2$hour == 1, ]$fare_amount))
+
+
+q4t2vt = vector(mode = "numeric", length = 0)
+for( t in 1:length(q4t2temindex)){
+	q4t2char = paste0("newdtq4t2[newdtq4t2$hour == ", q4t2temindex[t] ,", ]$fare_amount")
+	q4t2cel = mean(eval(parse(text = q4t2char)))
+	q4t2vt = c( q4t2vt, q4t2cel)
+}
+
+meanfaredf = data.frame( 
+hour = q4t2temindex, 
+mean.Fare_amount = q4t2vt)
+meanfaredf
+
+ggplot( meanfaredf, aes(x = factor(hour), y = mean.Fare_amount, group = 1 )) + geom_line() + geom_point()
+
+
+passcouindex = 0:9
+q4t3vt = vector(mode = "numeric", length = 0)
+for( l in 1:length(passcouindex)){
+	q4t3char = paste0("NROW(dt[dt$passenger_count == ", passcouindex[l],", ])")
+	q4t3cel = mean(eval(parse(text = q4t3char)))
+	q4t3vt = c( q4t3vt, q4t3cel)
+}
+
+pascouredf = data.frame(
+record.number = q4t3vt,
+passenger.count = passcouindex )
+
+library(ggrepel)
+ggplot( pascouredf, aes(x = factor(passenger.count), y = record.number, group = 1, label =  record.number)) + geom_line() + geom_point() + geom_text(size=6, nudge_x = 0.2, nudge_y = 0.5, aes(color = record.number)) + 
+guides(colour = guide_legend(override.aes = list(size=1,linetype=1)))
+
+
+# Test R
 # 
 # kan = leaflet()
 # kan = addTiles(kan)
