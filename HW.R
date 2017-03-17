@@ -1,5 +1,9 @@
 ﻿getwd()
 library(leaflet)
+
+# R Kan Dev Function IO
+source("C:/rws/rfunc/io.R")
+
 dt = read.csv( "yellow_tripdata_2015-08.csv"
 , stringsAsFactors = FALSE)
 
@@ -121,8 +125,18 @@ for( q in 1:NCOL(tmsumdf)){
 ggpic2 = data.frame( day = as.numeric(colchartd), pc = temsumwd)
 plot(ggpic2$day,ggpic2$pc, type = "b")
 
+weacorma = cor(wh8, use = "everything", method = "pearson")
+weacordf = as.data.frame(weacorma)
+summary(weacordf[,1])
 
+# wrta( weacordf, "q3cor.csv")
+dir()
 
+ggpic3text = data.frame( item = colnames(weacordf),num = weacordf[,1])
+ggpic3text
+
+plot(ggpic3text$item,ggpic3text$num, type = "b")
+ggplot( ggpic3text, aes(x = item, y = num)) + geom_boxplot()
 
 # Q4: Does long distance trip imply more tip?
 # Q4 : 長距離搭乘是否會影響到小費的多寡 
