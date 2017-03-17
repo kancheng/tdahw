@@ -139,7 +139,18 @@ plot(ggpic3text$item,ggpic3text$num, type = "b")
 ggplot( ggpic3text, aes(x = item, y = num)) + geom_boxplot()
 
 # Q4: Does long distance trip imply more tip?
-# Q4 : 長距離搭乘是否會影響到小費的多寡 
+# Q4 : 長距離搭乘是否會影響到小費的多寡
+
+newdtq4t1 = data.frame( 
+trip_distance = newdt$trip_distance, 
+tip_amount = newdt$tip_amount,
+total_amount = newdt$ total_amount,
+fare_amount = newdt$fare_amount)
+ndtq4t1mat = cor( newdtq4t1, use = "everything", method = "pearson")
+
+newdtq4t2= data.frame( hour = temHour, fare_amount = newdt$fare_amount)
+head(as.factor(temHour))
+q4t2temindex = unique(temHour)
 
 ## Test
 # 
