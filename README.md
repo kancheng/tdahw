@@ -1,7 +1,7 @@
 # tdahw
 Analyzing Taxi Data Homework
 
-# Question
+## Question
 文件題目詳見 docu
 
 Q1: What are the most pickups and drop offs region?
@@ -16,5 +16,5 @@ Q3: Whether weather affects customers to take taxi or not?
 
 Q4: Does long distance trip imply more tip?
 
-# Code
+## Code
 詳見 HW.R
